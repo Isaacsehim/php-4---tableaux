@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercice 3</title>
+	<style>
+h1 {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			font-family: Arial, sans-serif;
+			background-color: #121212;
+			padding: 20px;
+			margin: 0;
+		}
+
+		body {
+			background-color: #121212;
+			color: #ffffff;
+			font-family: Arial, sans-serif;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+		}
+
+		.container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+			padding: 20px;
+			max-width: 1200px;
+			margin: auto;
+		}
+
+		.product {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: #1e1e1e;
+			border-radius: 10px;
+			padding: 15px;
+			overflow: hidden;
+			transition: transform 0.3s ease;
+		}
+
+		.product:hover {
+			transform: scale(1.05);
+		}
+
+		.product img {
+			width: 100%;
+			border-radius: 5px;
+			transition: opacity 0.3s ease;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.product-info {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: rgba(0, 0, 0, 0.8);
+			color: white;
+			padding: 15px;
+			border-radius: 5px;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			width: 80%;
+		}
+		.product h2 {
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			color: white;
+			padding: 5px 10px;
+			background: rgba(0, 0, 0, 0.8);
+			border-radius: 5px;
+			text-align: center;
+			z-index: 1;
+		}
+		.product:hover h2 {
+			position: absolute;
+			color: white;
+			opacity: 0.5;
+			z-index: -1;
+		}
+		.product-info h3 {
+			font-weight: normal;
+		}
+		.product:hover img {
+			opacity: 0.2;
+		}
+
+		.product:hover .product-info {
+			opacity: 1;
+		}
+
+		@media (max-width: 900px) {
+			.container {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (max-width: 600px) {
+			.container {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>EXERCICE n°3 PHP</h1>
+<div class="container">
+<?php
+require_once 'products.php';
+?>
+</div>
+</body>
+</html>
